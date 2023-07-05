@@ -1,5 +1,5 @@
 const getContainersURL = ({
-  hostname = 'http://localhost:3000',
+  hostname = 'https://super-app-showcase-cjc7cos1l-doiya46.vercel.app',
   appName,
   version,
   platform,
