@@ -59,7 +59,7 @@
     {
       "name": "auth",
       "type": "internal",
-      "url": "https://github.com/callstack/super-app-showcase"
+      "url": "https://github.com/doiya46/super-app-showcase-origin"
     }
   ],
   "jest": {
