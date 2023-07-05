@@ -23,27 +23,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
         with:
-          path: |
-            .yarn/cache
-            node_modules
-            packages/auth/node_modules
-            packages/booking/node_modules
-            packages/catalog-server/node_modules
-            packages/dashboard/node_modules
-            packages/host/node_modules
-            packages/shell/node_modules
-            packages/shopping/node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          name: node-modules-cache
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -63,6 +46,22 @@ jobs:
 
       - name: Delete code-signing.pem
         run: rm code-signing.pem
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-modules-cache
+          retention-days: 30
+          path: |
+            .yarn/cache
+            node_modules
+            packages/auth/node_modules
+            packages/booking/node_modules
+            packages/catalog-server/node_modules
+            packages/dashboard/node_modules
+            packages/host/node_modules
+            packages/shell/node_modules
+            packages/shopping/node_modules
 
       - name: Release
         uses: ncipollo/release-action@v1
