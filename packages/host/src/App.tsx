@@ -1,10 +1,11 @@
 import React from 'react';
-import RNBootSplash from "react-native-bootsplash";
+import RNBootSplash from 'react-native-bootsplash';
 import {Federated} from '@callstack/repack/client';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigator from './navigation/MainNavigator';
 import SplashScreen from './components/SplashScreen';
 import ErrorBoundary from './components/ErrorBoundary';
+import {Button} from '@ant-design/react-native';
 
 const AuthProvider = React.lazy(() =>
   Federated.importModule('auth', './AuthProvider'),
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <ErrorBoundary name="AuthProvider">
       <React.Suspense fallback={<SplashScreen />}>
+        <Button type="primary">Ant Button</Button>
         <AuthProvider>
           {(authData: {isSignout: boolean; isLoading: boolean}) => {
             if (authData.isLoading) {
@@ -32,7 +34,8 @@ const App = () => {
             }
 
             return (
-              <NavigationContainer onReady={() => RNBootSplash.hide({ fade: true, duration: 500 })}>
+              <NavigationContainer
+                onReady={() => RNBootSplash.hide({fade: true, duration: 500})}>
                 <MainNavigator />
               </NavigationContainer>
             );

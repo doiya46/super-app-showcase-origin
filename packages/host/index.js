@@ -44,7 +44,7 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
     query: {
       platform: Platform.OS, // only needed in development
     },
-    verifyScriptSignature: 'strict',
+    // verifyScriptSignature: 'strict',
   };
 });
 

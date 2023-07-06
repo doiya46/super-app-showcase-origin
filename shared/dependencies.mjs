@@ -15,37 +15,42 @@ const deps = {
      * requiredVersion is used to match requested modules in bundle.
      * It's recommended to use the same version as in the host app.
      */
-    requiredVersion: "18.2.0",
+    requiredVersion: '18.2.0',
   },
-  "react-native": {
+  'react-native': {
     singleton: true,
     eager: true,
-    requiredVersion: "0.71.8",
+    requiredVersion: '0.71.8',
   },
-  "@react-navigation/native": {
+  '@react-navigation/native': {
     singleton: true,
     eager: true,
-    requiredVersion: "6.0.14",
+    requiredVersion: '6.0.14',
   },
-  "@react-navigation/native-stack": {
+  '@react-navigation/native-stack': {
     singleton: true,
     eager: true,
-    requiredVersion: "6.9.2",
+    requiredVersion: '6.9.2',
   },
-  "@react-navigation/material-bottom-tabs": {
+  '@react-navigation/material-bottom-tabs': {
     singleton: true,
     eager: true,
-    requiredVersion: "6.2.5",
+    requiredVersion: '6.2.5',
   },
-  "react-native-paper": {
+  'react-native-paper': {
     singleton: true,
     eager: true,
-    requiredVersion: "5.0.0-rc.10",
+    requiredVersion: '5.0.0-rc.10',
   },
-  "@react-native-async-storage/async-storage": {
+  '@react-native-async-storage/async-storage': {
     singleton: true,
     eager: true,
-    requiredVersion: "1.17.11",
+    requiredVersion: '1.17.11',
+  },
+  '@ant-design/react-native': {
+    singleton: true,
+    eager: true,
+    requiredVersion: '5.0.4',
   },
 };
 

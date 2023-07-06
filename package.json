@@ -16,6 +16,7 @@
     "start:standalone:shell": "yarn workspace shell run start",
     "start:standalone:dashboard": "yarn workspace dashboard run start:standalone",
     "run:host:ios": "yarn workspace host run ios",
+    "bundle:host:android": "yarn workspace host run bundle:android",
     "run:host:android": "yarn workspace host run android",
     "run:shell:ios": "yarn workspace shell run ios",
     "run:shell:android": "yarn workspace shell run android",
