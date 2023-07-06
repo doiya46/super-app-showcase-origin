@@ -25,6 +25,7 @@ jobs:
 
       - name: Download a single artifact
         uses: actions/download-artifact@v3
+        if: always()
         with:
           name: node-modules-cache
 
