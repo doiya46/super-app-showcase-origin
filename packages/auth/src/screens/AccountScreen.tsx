@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button} from 'react-native-paper';
+import {Button as AButton} from '@ant-design/react-native';
 import {useAuth} from '../contexts/AuthContext';
 
 const AccountScreen = () => {
@@ -11,6 +12,9 @@ const AccountScreen = () => {
       <Button mode="contained" onPress={signOut}>
         Logout
       </Button>
+      <AButton type="primary" onPress={signOut}>
+        Logout
+      </AButton>
     </View>
   );
 };
