@@ -55,14 +55,6 @@ jobs:
           retention-days: 30
           path: |
             .yarn/cache
-            node_modules
-            packages/auth/node_modules
-            packages/booking/node_modules
-            packages/catalog-server/node_modules
-            packages/dashboard/node_modules
-            packages/host/node_modules
-            packages/shell/node_modules
-            packages/shopping/node_modules
 
       - name: Release
         uses: ncipollo/release-action@v1
