@@ -23,11 +23,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
-        continue-on-error: true
-        with:
-          name: node-modules-cache
+      # - name: Download a single artifact
+      #   uses: actions/download-artifact@v3
+      #   continue-on-error: true
+      #   with:
+      #     name: node-modules-cache
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -48,13 +48,13 @@ jobs:
       - name: Delete code-signing.pem
         run: rm code-signing.pem
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-modules-cache
-          retention-days: 30
-          path: |
-            .yarn/cache
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: node-modules-cache
+      #     retention-days: 30
+      #     path: |
+      #       .yarn/cache
 
       - name: Release
         uses: ncipollo/release-action@v1
