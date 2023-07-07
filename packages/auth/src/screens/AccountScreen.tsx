@@ -13,7 +13,7 @@ const AccountScreen = () => {
         Logout
       </Button>
       <AButton type="primary" onPress={signOut}>
-        Logout antd design 0.0.1111
+        Logout antd design
       </AButton>
     </View>
   );
