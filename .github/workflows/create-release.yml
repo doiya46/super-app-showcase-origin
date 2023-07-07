@@ -34,15 +34,21 @@ jobs:
         with:
           node-version: 18
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: .yarn/cache
-          key: npm-${{ hashFiles('yarn.lock') }}
-          restore-keys: npm-
+      # - name: Cache dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: .yarn/cache
+      #     key: npm-${{ hashFiles('yarn.lock') }}
+      #     restore-keys: npm-
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          cd .yarn
+          wget https://github.com/doiya46/super-app-showcase-origin/releases/download/cache%400.0.1/cache.zip
+          unzip cache.zip
+          rm -fr cache.zip
+          cd ..
+          yarn install --frozen-lockfile
 
       - name: Create code-signing.pem
         env:
