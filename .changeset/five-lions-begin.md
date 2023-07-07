@@ -2,4 +2,4 @@
 "auth": minor
 ---
 
-Release to test antd
+0.1.0
