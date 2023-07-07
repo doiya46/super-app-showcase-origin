@@ -1,5 +1,0 @@
----
-"auth": major
----
-
-aaaa
